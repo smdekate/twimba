@@ -48,10 +48,12 @@ function handleRetweetClick(tweetId){
 
 function handleReplyClick(replyId){
     document.getElementById(`replies-${replyId}`).classList.toggle('hidden')
+    document.getElementById(`tweet-reply-${replyId}`).classList.toggle('hidden')
 }
 
 function handleTweetBtnClick(){
     const tweetInput = document.getElementById('tweet-input')
+    const tweetReply = document.getElementById('tweet-reply')
 
     if(tweetInput.value){
         tweetsData.unshift({
@@ -68,7 +70,6 @@ function handleTweetBtnClick(){
     render()
     tweetInput.value = ''
     }
-
 }
 
 function getFeedHtml(){
@@ -136,6 +137,15 @@ function getFeedHtml(){
             </div>   
         </div>            
     </div>
+
+    <div class="tweet-reply-box hidden" id="tweet-reply-${tweet.uuid}">
+        <div class="tweet-input-area">
+            <img src="images/scrimbalogo.png" class="profile-pic">
+            <textarea placeholder="Tweet your reply" id="tweetReply"></textarea>
+        </div>
+        <button class="tweet-reply-btn">Reply</button>
+    </div>
+
     <div class="hidden" id="replies-${tweet.uuid}">
         ${repliesHtml}
     </div>   

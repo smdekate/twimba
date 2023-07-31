@@ -130,3 +130,25 @@ button{
 .hidden{
     display: none;
 }
+
+
+.tweet-reply-box {
+    margin: 20px;
+    width: 80%;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 20px;
+
+}
+
+.tweet-reply-btn {
+    background-color: lightgray;
+    color: black;
+    border: none;
+    padding: 10px 19px;
+    border-radius: 20px;
+    width: 70%;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+}
